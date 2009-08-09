@@ -1,0 +1,3 @@
+<?php
+$wgmicpgpsetfile = "yes";
+?>
