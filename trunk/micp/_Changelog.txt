@@ -1,0 +1,38 @@
+===========
+Changelog
+===========
+
+===========
+Version 1.2
+===========
+
+* Changed error dialogs to error divs on top of the page
+* Included the Writing part of the script
+* Enabled some error catching and warning messages like (Please add require_once.....)
+* Removed some other annoying bits and bobs
+
+===========
+Version 0.4
+===========
+
+* Changed the Extension link (Sorry, its all part of the big plan)
+
+===========
+Version 0.3
+===========
+
+* Complete Redesign of the Extension
+* Now included in Special Pages Page.
+* Fixed a bug in the code which causes itl to be added when changes are made
+
+===========
+Version 0.2
+===========
+
+* Fixed the Page Protection (If not a bureaucrat not editable)
+
+===========
+Version 0.1
+===========
+
+* Initial Release
