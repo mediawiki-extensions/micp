@@ -22,6 +22,7 @@ $wgAjaxExportList[] = 'addperm';
 $wgAjaxExportList[] = 'savegroup';
 $wgAjaxExportList[] = 'errorbox';
 $wgAjaxExportList[] = 'notifybox';
+$wgAjaxExportList[] = 'settingsfileq';
  $wgExtensionCredits['specialpage'][] = array(
    'name'    => 'MICP : Group Permissions Editor',
    'version' => '1.2',
@@ -238,7 +239,6 @@ function wfGroupPermissionsExtension() {
             global $wgOut,$wgRequest,$wgScriptPath,$wgmicpgpsetfile;
 				$set = @$wgmicpgpsetfile;
 				$html = null;
-				$html = settingsfileq();
 				if (ExampleSpecialPage::isBureaucrat() == false){
 				$html = $html.'<div id="msgboxes" style="text-align:center" align="center"></div><script type="text/javascript">setTimeout("bureaucrat()",500)</script>';
 				}else{
@@ -273,6 +273,7 @@ function wfGroupPermissionsExtension() {
 				//	var hide=setTimeout("$(\'" + id + "\').hide()", 4800);
 				//}
 				
+				
 				function fadeout(id){
 					var fade=setTimeout("fadeout2(\'" + id + "\')", 8000);
 				}
@@ -299,6 +300,10 @@ function wfGroupPermissionsExtension() {
 						sajax_do_call(\'creategroupP\', [groupname], display);
 						//sajax_do_call(\'loadpage\', ["Loading Group Creation page: " + groupname], ng);
 					}
+				}
+				
+				function displayErrorsettingsfileq(){
+					sajax_do_call(\'settingsfileq\', [], displaymsgbox);
 				}
 				
 				function jserrorbox(message){
@@ -437,7 +442,9 @@ function wfGroupPermissionsExtension() {
 						return false;
 					}
 				}
+				disableSelection(document.getElementById("msgboxes"));
 				disableSelection(document.getElementById("GroupPerms"));
+				displayErrorsettingsfileq();
 				</script>
 				<script type="text/javascript">
 				var current = 0;
